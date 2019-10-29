@@ -1,0 +1,4 @@
+﻿  pch.cpp
+  Agenda.cpp
+c:\users\manager\desktop\agenda\agenda\agenda.cpp(24): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  Agenda.vcxproj -> C:\Users\manager\Desktop\Agenda\Debug\Agenda.exe
