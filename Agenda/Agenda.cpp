@@ -12,10 +12,11 @@ struct
 	char nome[150];
 	char end[200];
 	char tel[15];
-}agenda[4];
+}agenda[4],aux;
 
 int menu();
 void cadastrar();
+void ordenar();
 void imprimir();
 void sair();
 int sel;
@@ -37,6 +38,8 @@ void main()
 
 		case 3: sair();
 			break;
+		case 4: ordenar();
+			break;
 		}
 	}
 }
@@ -53,6 +56,8 @@ int menu()
 	gotoxy(30, 12);
 	printf("3.Fim");
 	gotoxy(30, 13);
+	printf("4.Ordenar");
+	gotoxy(30, 14);
 	printf("Digite a opção desejada:");
 	fflush(stdin);
 	scanf_s("%i", &valor_sel);
@@ -118,6 +123,24 @@ void imprimir()
 		puts(agenda[x].tel);
 		_getch();
 	}
+}
+
+
+void ordenar() {
+	
+	int k, w;
+	
+	for (k = 0; k < 4 - 1; k++) {
+		for (w = k + 1; w < 4; w++) {
+			if (_strcmpi(agenda[k].nome, agenda[w].nome) > 0) {
+				aux = agenda[k];
+				agenda[k] = agenda[w];
+				agenda[w] = aux;
+			}
+		}
+
+	}
+
 }
 
 void sair()
